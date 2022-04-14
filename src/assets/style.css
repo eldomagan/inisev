@@ -321,15 +321,21 @@ img {
 }
 
 .profile-details {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (min-width: 768px) {
+  .profile-details {
+    left: 300px;
+  }
 }
 
 .profile-details__content {
