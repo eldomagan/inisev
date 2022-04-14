@@ -370,6 +370,7 @@ img {
   margin-right: 0.5rem;
   border: 1.5px solid black;
   border-radius: 100%;
+  flex: none;
 }
 
 .profile-details__info-item a {
