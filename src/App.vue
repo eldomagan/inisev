@@ -13,7 +13,9 @@ export default {
 
   computed: {
     layout() {
-      return this.$route.name !== "login" ? DefaultLayout : EmptyLayout;
+      return this.$route.name && this.$route.name !== "login"
+        ? DefaultLayout
+        : EmptyLayout;
     },
   },
 };
