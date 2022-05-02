@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import EmptyLayout from "./layouts/EmptyLayout.vue";
 import DefaultLayout from "./layouts/DefaultLayout.vue";
 
 export default {
@@ -15,7 +14,7 @@ export default {
     layout() {
       return this.$route.name && this.$route.name !== "login"
         ? DefaultLayout
-        : EmptyLayout;
+        : "div";
     },
   },
 };

@@ -49,10 +49,21 @@ export default {
     this.fetchUsers()
       .then(() => {
         this.loading = false;
+        this.$nextTick(() => {
+          this.handleAppearenceListener();
+        });
       })
       .catch((error) => {
         console.log(error);
         this.loading = false;
+      });
+  },
+
+  mounted() {
+    document
+      .querySelector(".default-layout__content")
+      .addEventListener("scroll", () => {
+        this.handleAppearenceListener();
       });
   },
 
@@ -65,6 +76,18 @@ export default {
         params: {
           id: user.id,
         },
+      });
+    },
+
+    handleAppearenceListener() {
+      document.querySelectorAll(".users-list__item").forEach((card) => {
+        var windowHeight = window.innerHeight;
+        var elementTop = card.getBoundingClientRect().top;
+        if (elementTop < windowHeight) {
+          card.classList.add("users-list__item--appear");
+        } else {
+          card.classList.remove("users-list__item--appear");
+        }
       });
     },
   },

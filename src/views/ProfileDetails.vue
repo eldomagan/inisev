@@ -13,7 +13,7 @@
       <div class="profile-details__info">
         <div class="profile-details__info-item">
           <user-icon />
-          <div>{{ user.name }}</div>
+          <p>{{ user.name }}</p>
         </div>
         <div class="profile-details__info-item">
           <mail-icon />
@@ -27,15 +27,15 @@
         </div>
         <div class="profile-details__info-item">
           <phone-icon />
-          <div>{{ user.phone }}</div>
+          <p>{{ user.phone }}</p>
         </div>
         <div class="profile-details__info-item">
           <home-icon />
-          <div>{{ user.address.city }}, {{ user.address.street }}</div>
+          <p>{{ user.address.city }}, {{ user.address.street }}</p>
         </div>
         <div class="profile-details__info-item">
           <globe-icon />
-          <div>{{ user.website }}</div>
+          <p>{{ user.website }}</p>
         </div>
       </div>
     </div>

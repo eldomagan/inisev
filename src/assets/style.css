@@ -196,8 +196,11 @@ img {
   text-transform: uppercase;
   font-weight: bold;
   text-decoration: none;
-  border-bottom: 1px solid #535961;
   border-top: 1px solid #535961;
+}
+
+.sidebar__menu li:last-child a {
+  border-bottom: 1px solid #535961;
 }
 
 .home h1 {
@@ -266,6 +269,16 @@ img {
   border-radius: 0.75rem;
   position: relative;
   overflow: hidden;
+  position: relative;
+  transition: 1s all ease;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.users-list__item--appear {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .users-list__item--loading {
@@ -341,16 +354,29 @@ img {
 .profile-details__content {
   background: white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
+  margin: 1rem;
 }
 
 .profile-details__photo {
   background-size: cover;
   background-position: center;
-  width: 200px;
+  height: 200px;
+}
+
+@media screen and (min-width: 480px) {
+  .profile-details__content {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .profile-details__photo {
+    width: 200px;
+    height: 270px;
+  }
 }
 
 .profile-details__info {

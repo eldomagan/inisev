@@ -5,22 +5,17 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    usersById: {},
-    usersIds: [],
+    users: [],
   },
 
   getters: {
-    users: (state) => state.usersIds.map((id) => state.usersById[id]),
-    userById: (state) => (id) => state.usersById[id],
+    users: (state) => state.users,
+    userById: (state) => (id) => state.users.find((user) => user.id === id),
   },
 
   mutations: {
     SET_USERS(state, users) {
-      state.usersIds = users.map((user) => user.id);
-      state.usersById = users.reduce((acc, user) => {
-        acc[user.id] = user;
-        return acc;
-      }, {});
+      state.users = users;
     },
   },
 
